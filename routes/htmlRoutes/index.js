@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../Develop/public/index.html'));
 });
 
-//connect the zookeepers page
+//connect the notes page
 router.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../../Develope/public/notes.html'));
 });
@@ -16,5 +16,9 @@ router.get('/notes', (req, res) => {
 router.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../Develop/public/index.html'));
 });
+
+
+
+
 
 module.exports = router;
