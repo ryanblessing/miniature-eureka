@@ -7,7 +7,7 @@ const express = require('express');
 //express function to the app so we can chain on methods to the express server
 const app = express();
 
-
+const PORT = process.env.PORT || 3002;
 //get routes to potentially move to a different folder
 app.get('./Develop/db/db.json', (req, res) => {
     res.json(db.json);
@@ -18,6 +18,6 @@ app.get('./Develop/db/db.json', (req, res) => {
 
 
 // gives us a web page to listen for
-app.listen(80, () => {
-    console.log('This is actually working?')
-})
+app.listen(PORT, () => {
+    console.log(`API server is now on port ${PORT}!`);
+});
