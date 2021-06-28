@@ -12,7 +12,7 @@ const express = require('express');
 
 
 //express function to the app so we can chain on methods to the express server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 //assigned to chain methods together
 const app = express();
@@ -20,12 +20,7 @@ const app = express();
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-
-
-
-
-
-//function findByTitle()
+//middleware
 
 
 // gives us a web page to listen for
