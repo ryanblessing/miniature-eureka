@@ -1,20 +1,31 @@
-//fs module provides utillities for working w/ file and directory paths
+//fs module provides utilities for working w/ file and directory paths
 const fs =  require('fs');
+const path = require('path');
+
+//added for routes to api and html
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 
 //npm package module
 const express = require('express');
 
+
 //express function to the app so we can chain on methods to the express server
+const PORT = process.env.PORT || 3001;
+
+//assigned to chain methods together
 const app = express();
 
-const PORT = process.env.PORT || 3002;
-//get routes to potentially move to a different folder
-app.get('./Develop/db/db.json', (req, res) => {
-    res.json(db.json);
-});
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 
 
+
+
+
+//function findByTitle()
 
 
 // gives us a web page to listen for
