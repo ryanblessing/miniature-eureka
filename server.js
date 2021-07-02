@@ -14,7 +14,7 @@ const apiRoutes = require('./routes/apiRoutes/index.js')
 app.use(helmet())
 app.use(express.static('public'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: true}));
 
 //eventually put get in routes folder
 app.use('/api', apiRoutes)
