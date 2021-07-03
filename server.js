@@ -1,22 +1,17 @@
 //fs module provides utilities for working w/ file and directory paths
-const fs =  require('fs');
-const path = require('path');
 const express = require('express');
-const helmet = require('helmet');
+const htmlRoutes = require('./routes/htmlRoutes.js')
+const apiRoutes = require('./routes/apiRoutes.js')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const htmlRoutes = require('./routes/htmlRoutes/index.js')
-const apiRoutes = require('./routes/apiRoutes/index.js')
-
 //middleware
-app.use(helmet())
-app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}));
+app.use(express.static('public'))
 
-//eventually put get in routes folder
+//showing what folder you use
 app.use('/api', apiRoutes)
 app.use('/', htmlRoutes)
 
